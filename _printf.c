@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdarg.h>
-#include "prototypes.h"
+#include "main.h"
 /**
  * _printf-prints anything
  * @format:format specifiers
