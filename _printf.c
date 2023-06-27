@@ -43,7 +43,7 @@ va_end(list);
 return(printed_chars);
 }
 /**
-*print_buffer is prints contents if they exist
+*print_buffer will prints contents if they exist
 *@buffer:Array contains chars
 *@buff_ind:index at which to add next char,reps length
 */
