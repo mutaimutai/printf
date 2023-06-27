@@ -28,7 +28,7 @@ int print_str(va_list any);
  * @any:arguments in the va_list
  * Return:o if suceessfull
  */
-int percent_sign(va_list any);
+int percent_sign();
 /**
  * struct op-structure to hold the specifiers
  * @ch:the strings to be formatted

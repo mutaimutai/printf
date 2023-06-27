@@ -43,7 +43,7 @@ int print_str(va_list any)
  * percent_sign-prints %
  * Return:returns 1
  */
-int percent_sign(va_list)
+int percent_sign()
 {
 	write(1, "%", 1);
 	return (1);
