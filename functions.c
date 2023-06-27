@@ -41,10 +41,9 @@ int print_str(va_list any)
 }
 /**
  * percent_sign-prints %
- * @any:from var arguments
  * Return:returns 1
  */
-int percent_sign(va_list any)
+int percent_sign(va_list)
 {
 	write(1, "%", 1);
 	return (1);
