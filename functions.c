@@ -10,7 +10,7 @@ int print_char(va_list any)
 {
 	char ch;
 	ssize_t characters = 0;
-	
+
 	ch = va_arg(any, int);
 	characters = write(1, &ch, 1);
 	return (characters);
@@ -39,6 +39,11 @@ int print_str(va_list any)
 	}
 	return (characters);
 }
+/**
+ * percent_sign-prints %
+ * @any:from var arguments
+ * Return:returns 1
+ */
 int percent_sign(va_list any)
 {
 	write(1, "%", 1);

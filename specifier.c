@@ -4,7 +4,6 @@
 /**
  * specifier-a character pointer pointing to the functions
  * @format:the strings goes here
- * @any:the arguments from va_list
  * Return:o if successfull
  */
 int (*specifier(const char *format))(va_list any)
@@ -20,7 +19,7 @@ int (*specifier(const char *format))(va_list any)
 	};
 
 	i = 0;
-	while (format[i] !='\0' && format[i])
+	while (format[i] != '\0' && format[i])
 	{
 		j = 0;
 		while (items[j].f != NULL)

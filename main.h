@@ -31,12 +31,12 @@ int print_str(va_list any);
 int percent_sign(va_list any);
 /**
  * struct op-structure to hold the specifiers
- * @c:the strings to be formatted
+ * @ch:the strings to be formatted
  * @f:function pointer pointing to the functions created
  */
 typedef struct op
 {
 	char *ch;
 	int (*f)(va_list any);
-}printed;
+} printed;
 #endif
