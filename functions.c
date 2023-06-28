@@ -58,7 +58,6 @@ int print_decimal(va_list any)
 {
 	int num = va_arg(any, int);
 	int characters = 0;
-	int arr[10];
 	int i = 0, j = 0;
 
 	if (num == 0)
@@ -66,26 +65,35 @@ int print_decimal(va_list any)
 		write(1, "0", 1);
 		return (1);
 	}
-	if (num < 0)
+	else if (num == INT_MIN)
 	{
-		write(1, "-", 1);
-		characters++;
-		num = -num;
+		write(1, "-2147483648", 11);
+		return (11);
 	}
-	while (num > 0)
+	else
 	{
-		arr[i] = num % 10;
-		num /= 10;
-		i++;
-	}
-	for (j = i - 1; j >= 0; j--)
-	{
-		char digitChar = '0' + arr[j];
+		char num_str[12];
+		int is_negative = num < 0;
 
-		write(1, &digitChar, 1);
-		characters++;
-	}
+		if (is_negative)
+		{
+			write(1, "-", 1);
+			num = -num;
+			characters++;
+		}
+		while (num != 0)
+		{
+			num_str[i++] = '0' + (num % 10);
+			num /= 10;
+		}
+		for (j = j - 1; j >= 0; j--)
+		{
+			write(1, &num_str[j], 1);
+			characters++;
+		}
+
 	return (characters);
+	}
 }
 /**
  * print_integer-prints an integer
@@ -96,7 +104,6 @@ int print_integer(va_list any)
 {
 	int num = va_arg(any, int);
 	int characters = 0;
-	int arr[10];
 	int i = 0, j = 0;
 
 	if (num == 0)
@@ -104,32 +111,32 @@ int print_integer(va_list any)
 		write(1, "0", 1);
 		return (1);
 	}
-	if (num < 0)
+	else if (num == INT_MIN)
 	{
-		write(1, "-", 1);
-		characters++;
-		if (num == INT_MIN)
-		{
-			num = INT_MAX;
-			arr[i++] = 8;
-		}
-		else
-		{
-			num = abs(num);
-		}
+		write(1, "-2147483648", 11);
+		return (11);
 	}
-	while (num > 0)
+	else
 	{
-		arr[i] = num % 10;
-		num /= 10;
-		i++;
-	}
-	for (j = i - 1; j >= 0; j--)
-	{
-		char digitChar = '0' + arr[j];
+		char num_str[12];
+		int is_negative = num < 0;
 
-		write(1, &digitChar, 1);
-		characters++;
+		if (is_negative)
+		{
+			write(1, "-", 1);
+			num = -num;
+			characters++;
+		}
+		while (num != 0)
+		{
+			num_str[i++] = '0' + (num % 10);
+			num /= 10;
+		}
+		for (j = j - 1; j >= 0; j--)
+		{
+			write(1, &num_str[j], 1);
+			characters++;
+		}
+		return (characters);
 	}
-	return (characters);
 }
