@@ -15,6 +15,7 @@ int (*specifier(const char *format))(va_list any)
 		{"c", print_char},
 		{"s", print_str},
 		{"%", percent_sign},
+		{"d", print_decimal},
 		{NULL, NULL}
 	};
 

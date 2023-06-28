@@ -34,6 +34,7 @@ int percent_sign();
  * @ch:the strings to be formatted
  * @f:function pointer pointing to the functions created
  */
+int print_decimal(va_list any);
 typedef struct op
 {
 	char *ch;
