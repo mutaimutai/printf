@@ -65,6 +65,12 @@ int print_decimal(va_list any)
 		write(1, "0", 1);
 		return (1);
 	}
+	if (num < 0)
+	{
+		write(1, "-", 1);
+		characters++;
+		num = -num;
+	}
 	while (num > 0)
 	{
 		arr[i] = num % 10;
