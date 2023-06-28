@@ -49,33 +49,34 @@ int percent_sign(void)
 	return (1);
 }
 /**
- * int print_decimal-prints an integer
+ * print_decimal-prints a decimal number
  * @any:arguments from variable list
  * Return: number of printed characters
  */
 int print_decimal(va_list any)
 {
-int i = 0;
+	int num = va_arg(any, int);
 	int characters = 0;
-	int out;
 	int arr[10];
-	char caleb[1];
+	int i = 0, j = 0;
 
-	out = va_arg(args, int);
-
-	while (numb != 0)
+	if (num == 0)
 	{
-		arr[i] = (out % 10);
-		out = out / 10;
-		if (out == 0)
-			return -1;
+		write(1, "0", 1);
+		return (1);
 	}
-
-	for (i; i >= 0; i--)
+	while (num > 0)
 	{
-		caleb[0] = ('0' + arr[i]);
-		out += write(1, x, 1);
+		arr[i] = num % 10;
+		num /= 10;
+		i++;
 	}
+	for (j = i - 1; j >= 0; j--)
+	{
+		char digitChar = '0' + arr[j];
 
-	return (out);
+		write(1, &digitChar, 1);
+		characters++;
+	}
+	return (characters);
 }
