@@ -86,36 +86,41 @@ int print_decimal(va_list any)
 	}
 	return (characters);
 }
+/**
+ * print_integer-prints an integer
+ * @any:argument variable from va_list
+ * Return:number of characters printed out
+ */
 int print_integer(va_list any)
 {
-        int num = va_arg(any, int);
-        int characters = 0;
-        int arr[10];
-        int i = 0, j = 0;
+	int num = va_arg(any, int);
+	int characters = 0;
+	int arr[10];
+	int i = 0, j = 0;
 
-        if (num == 0)
-        {
-                write(1, "0", 1);
-                return (1);
-        }
-        if (num < 0)
-        {
-                write(1, "-", 1);
-                characters++;
-                num = -num;
-        }
-        while (num > 0)
-        {
-                arr[i] = num % 10;
-                num /= 10;
-                i++;
-        }
-        for (j = i - 1; j >= 0; j--)
-        {
-                char digitChar = '0' + arr[j];
+	if (num == 0)
+	{
+		write(1, "0", 1);
+		return (1);
+	}
+	if (num < 0)
+	{
+		write(1, "-", 1);
+		characters++;
+		num = -num;
+	}
+	while (num > 0)
+	{
+		arr[i] = num % 10;
+		num /= 10;
+		i++;
+	}
+	for (j = i - 1; j >= 0; j--)
+	{
+		char digitChar = '0' + arr[j];
 
-                write(1, &digitChar, 1);
-                characters++;
-        }
-        return (characters);
+		write(1, &digitChar, 1);
+		characters++;
+	}
+	return (characters);
 }
