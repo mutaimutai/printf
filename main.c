@@ -41,5 +41,6 @@ int main(void)
     _printf("Unknown:[%r]\n");
     printf("Unknown:[%r]\n");
     _printf("%d", INT_MIN);
+    _printf("A char inside a sentence: %c. Did it work?\n", 'F');
     return (0);
 }

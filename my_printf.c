@@ -27,24 +27,24 @@ int _printf(const char *format, ...)
 		}
 		if (format[i] == '%')
 		{
-		f_ptr = specifier(&format[i + 1]);
-		if (f_ptr != NULL)
-		{
-		printed_char = f_ptr(strings);
-		total_char = total_char + printed_char;
-		i += 2;
-		continue;
-		}
-		if (format[i + 1] == '\0')
-			return (-1);
-		if (format[i + 1] != '\0')
-		{
-			printed_char = write(1, &format, 1);
-			total_char = total_char + printed_char;
-			i += 2;
-		continue;
-		}
-	} i++;
-}
-return (total_char);
+			f_ptr = specifier(&format[i + 1]);
+			if (f_ptr != NULL)
+			{
+				printed_char = f_ptr(strings);
+				total_char = total_char + printed_char;
+				i += 2;
+				continue;
+			}
+			if (format[i + 1] == '\0')
+				return (-1);
+			if (format[i + 1] != '\0')
+			{
+				printed_char = write(1, &format, 1);
+				total_char = total_char + printed_char;
+				i += 2;
+				continue;
+			}
+			} i++;
+	}
+	return (total_char);
 }
