@@ -108,7 +108,15 @@ int print_integer(va_list any)
 	{
 		write(1, "-", 1);
 		characters++;
-		num = -num;
+		if (num == INT_MIN)
+		{
+			num = INT_MAX;
+			arr[i++] = 8;
+		}
+		else
+		{
+			num = abs(num);
+		}
 	}
 	while (num > 0)
 	{
