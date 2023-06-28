@@ -35,6 +35,7 @@ int percent_sign();
  * @f:function pointer pointing to the functions created
  */
 int print_decimal(va_list any);
+int print_integer(va_list any);
 typedef struct op
 {
 	char *ch;
