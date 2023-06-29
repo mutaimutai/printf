@@ -20,8 +20,12 @@ int main()
 	_printf("%c", '\0');
 	_printf("%");
 	_printf("%!\n");
+	printf("%!\n");
 	_printf("%K\n");
+	printf("%K\n");
 	j =printf("Complete the sentence: You %s nothing, Jon Snow.\n", "know");
 	printf("%d %d\n",i , j);
+	_printf("%");
+	printf("%");
 	return (0);
 }

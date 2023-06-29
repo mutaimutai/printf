@@ -132,7 +132,7 @@ int print_integer(va_list any)
 			num_str[i++] = '0' + (num % 10);
 			num /= 10;
 		}
-		for (j = j - 1; j >= 0; j--)
+		for (j = i - 1; j >= 0; j--)
 		{
 			write(1, &num_str[j], 1);
 			characters++;
