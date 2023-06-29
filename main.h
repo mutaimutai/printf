@@ -5,6 +5,9 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
+
+#define UNUSED(X) void (x)
+#define BUFF_SIZE 1024
 /**
  * _printf-the variadic function
  * @format:the format string
